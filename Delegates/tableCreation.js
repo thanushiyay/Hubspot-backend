@@ -37,7 +37,7 @@ const createTable = () => {
             "columns" : [{
                 "name": "Email",
                 "type": "TEXT"
-            },{
+            }, {
                 "name": "TotalViewed",
                 "type": "NUMBER"
             }, {
@@ -46,6 +46,9 @@ const createTable = () => {
             }, {
                 "name": "Date",
                 "type": "TEXT"
+            }, {
+                "name": "DURATION OF TIME",
+                "type": 'TEXT'
             }]
         }
       }).then(success => {
