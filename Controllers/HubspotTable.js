@@ -6,7 +6,8 @@ const api = 'https://api.hubapi.com/hubdb';
 
 router.post('/add', async(req, res, next) => {
     try {
-        const endpoint = '/api/v2/tables/5249643/rows';
+        const endpoint = '/api/v2/tables/5249703/rows';
+        console.log(req.body.values);
         let requestBody = {
             "values": req.body.values
         }
