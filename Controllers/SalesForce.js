@@ -40,6 +40,19 @@ router.post('/createContacts', async(req, res, next) => {
 
 router.post('/addSurvey',async(req, res, next) => {
     try {
+        conn.sobject("SurveyDeck__c").create(req.body.values,(err, response) => {
+            if(err) {
+                throw new Error(err);
+            }
+            res.status(200).send({ message: "Row Inserted"})
+          })
+    } catch (error) {
+        res.status(200).send({ message: "Error occured"})
+    }
+})
+
+router.post('/addDeck',async(req, res, next) => {
+    try {
         conn.sobject("Deck__c").create(req.body.values,(err, response) => {
             if(err) {
                 throw new Error(err);
@@ -54,6 +67,19 @@ router.post('/addSurvey',async(req, res, next) => {
 router.get('/getDeck', async(req, res, next) => {
     try {
         conn.sobject("Deck__c").select((err, response) => {
+            if(err) {
+                throw new Error(err);
+            }
+            res.status(200).send({ response: response})
+        })
+    } catch (error) {
+        res.status(200).send({ message: "Error occured"});
+    }
+})
+
+router.get('/getSurvey', async(req, res, next) => {
+    try {
+        conn.sobject("SurveyDeck__c").select((err, response) => {
             if(err) {
                 throw new Error(err);
             }
