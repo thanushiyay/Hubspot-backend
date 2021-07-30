@@ -40,7 +40,7 @@ router.post('/createContacts', async(req, res, next) => {
 
 router.post('/addSurvey',async(req, res, next) => {
     try {
-        conn.sobject("SurveyDeck__c").create(req.body.values,(err, response) => {
+        conn.sobject("Survey_Analytics__c").create(req.body.values,(err, response) => {
             if(err) {
                 throw new Error(err);
             }
@@ -53,7 +53,7 @@ router.post('/addSurvey',async(req, res, next) => {
 
 router.post('/addDeck',async(req, res, next) => {
     try {
-        conn.sobject("Deck__c").create(req.body.values,(err, response) => {
+        conn.sobject("Deck_Analytics__c").create(req.body.values,(err, response) => {
             if(err) {
                 throw new Error(err);
             }
